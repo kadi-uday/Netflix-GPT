@@ -2,13 +2,17 @@ import React, { useRef, useState } from 'react'
 import Header from './Header';
 import { checkValidData } from '../utils/validate';
 import {auth} from '../utils/firebase';
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { signInWithEmailAndPassword } from "firebase/auth";
+import { useDispatch } from 'react-redux';
+import { addUser } from '../utils/userSlice';
+import { AVATHAR_URL, BG_IMG_URL } from '../utils/constants';
 
 const Login = () => {
 
   const [isSignInForm, setIsSignInForm] = useState(true);
   const [errorMessage, setErrorMessage] = useState(null);
+  const dispatch = useDispatch();
 
   const toggleSignInForm = () => {
     setIsSignInForm(!isSignInForm);
@@ -32,6 +36,18 @@ const Login = () => {
           .then((userCredential) => {
             
             const user = userCredential.user;
+            updateProfile(auth.currentUser, {
+              displayName: name.current.value,
+              photoURL : AVATHAR_URL
+            }).then(() => {
+              // Profile updated!
+               const {uid, displayName, email, photoURL} = auth.currentUser;
+                  dispatch(addUser({uid: uid, email: email, displayName: displayName, photoURL: photoURL}));
+              
+            }).catch((error) => {
+              // An error occurred
+              setErrorMessage(error.message);
+            });
             console.log(user);
           })
         .catch((error) => {
@@ -51,7 +67,6 @@ const Login = () => {
         .then((userCredential) => {
           
           const user = userCredential.user;
-          console.log(user);
         })
         .catch((error) => {
           const errorCode = error.code;
@@ -66,7 +81,7 @@ const Login = () => {
     <div className='relative'>
         <Header />
         <div className='absolute inset-0 -z-10' >
-            <img src='https://assets.nflxext.com/ffe/siteui/vlv3/914ad279-199e-4095-9c10-2409dc9e5e1b/web/IN-en-20250519-TRIFECTA-perspective_8f1ca896-9e49-4a4e-90f0-22fc49650bd9_medium.jpg' alt='background-img' className='brightness-75 '></img>
+            <img src={BG_IMG_URL} alt='background-img' className='brightness-75 '></img>
         </div>
 
         <form onSubmit={(e) => e.preventDefault()} className='w-3/12 absolute p-12 bg-black bg-opacity-70 mx-auto right-0 left-0 text-white rounded-lg z-20 top-28 '>
