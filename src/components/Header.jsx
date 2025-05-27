@@ -42,14 +42,14 @@ const Header = ({ variant = "default" }) => {
        <div
       className={`${
         isBrowse
-          ? "bg-black/90 py-4 px-8"
+          ? "bg-gradient-to-b from-black via-black/70 to-transparent py-4 px-8"
           : "bg-transparent mx-10 my-7"
       } w-full fixed top-0 left-0 z-20 flex items-center justify-between`}
     >
       <img
         src={LOGO_URL}
         alt="logo"
-        className={`${isBrowse ? "w-32" : "w-56"} ml-2`}
+        className={`${isBrowse ? "w-32" : "w-56"} ml-5`}
       />
 
       {isBrowse && (
