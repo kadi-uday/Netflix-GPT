@@ -1,0 +1,24 @@
+import React, { useEffect } from 'react'
+import { API_OPTIONS } from '../utils/constants';
+import { useDispatch } from 'react-redux';
+import { addActionThrillerMovies} from '../utils/movieSlice';
+
+const useActionThriller = () => {
+
+    const dispatch = useDispatch();
+
+    const getActionThrillerMovies = async () => {
+    const data = await fetch("https://api.themoviedb.org/3/discover/movie?with_genres=28,53&sort_by=popularity.desc", API_OPTIONS);
+
+    const json = await data.json();
+    console.log(json.results);
+    
+    dispatch(addActionThrillerMovies(json.results));
+    }
+
+    useEffect(() => {
+    getActionThrillerMovies();
+    },[]);
+    }
+
+export default useActionThriller;

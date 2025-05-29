@@ -42,24 +42,24 @@ const Header = ({ variant = "default" }) => {
        <div
       className={`${
         isBrowse
-          ? "bg-gradient-to-b from-black via-black/70 to-transparent py-4 px-8"
+          ? "bg-gradient-to-b from-black via-black/80 to-transparent py-4 px-8 "
           : "bg-transparent mx-10 my-7"
-      } w-full fixed top-0 left-0 z-20 flex items-center justify-between`}
+      } w-full absolute top-0 left-0 z-20 flex items-center justify-between`}
     >
       <img
         src={LOGO_URL}
         alt="logo"
-        className={`${isBrowse ? "w-32" : "w-56"} ml-5`}
+        className={`${isBrowse ? "w-32 " : "w-56"} ml-5`}
       />
 
       {isBrowse && (
-        <div className="flex items-center space-x-2">
+        <div className="flex items-center  space-x-2">
           <img
             src={AVATHAR_URL}
             alt="user"
             className="w-10 h-10 rounded cursor-pointer"
           />
-          <button onClick={handleSignOut} className="text-white text-lg font-bold hover:underline">
+          <button onClick={handleSignOut} className="text-white text-lg font-bold hover:text-[#de0913] hover:underline">
             Sign Out
           </button>
         </div>

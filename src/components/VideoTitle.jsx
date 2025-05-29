@@ -3,7 +3,7 @@ import { Play } from "lucide-react";
 
 const VideoTitle = ({title, overview}) => {
   return (
-    <div className='pt-72 px-12 absolute w-screen aspect-video  text-white bg-gradient-to-r from-black'>
+    <div className='pt-64 px-12 absolute w-screen aspect-video  text-white bg-gradient-to-r from-black'>
         <h1 className='text-6xl font-bold'>{title}</h1>
         <p className='text-lg py-6 w-1/4'>{overview}</p>
         <div className='flex gap-4 mt-4'>

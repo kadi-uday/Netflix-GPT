@@ -8,13 +8,13 @@ const movies = useSelector((store) => store.movies);
 
   return (
     movies.nowPlayingMovies && (
-    <div className='bg-black'>
+    <div className='bg-black '>
         <div className='-mt-52 pl-12 relative z-20 from-black'>
             <MovieList title = {"Now Playing"} movies= {movies.nowPlayingMovies} />
-            <MovieList title = {"Trending"} movies= {movies.nowPlayingMovies} />
+            <MovieList title = {"Trending"} movies= {movies.trendingMovies} />
             <MovieList title = {"Popular"} movies= {movies.popularMovies} />
-            <MovieList title = {"Action Thriller"} movies= {movies.nowPlayingMovies} />
-            <MovieList title = {"Horror"} movies= {movies.nowPlayingMovies} />
+            <MovieList title = {"Action Thriller"} movies= {movies.actionThrillerMovies} />
+            <MovieList title = {"Horror"} movies= {movies.horrorMovies} />
         </div>
     </div>
     )
