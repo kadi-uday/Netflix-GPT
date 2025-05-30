@@ -1,3 +1,4 @@
+import { useSelector } from 'react-redux';
 import useActionThriller from '../hooks/useActionThriller';
 import useHorrorMovies from '../hooks/useHorrorMovies';
 import useNowPlayingMovies from '../hooks/useNowPlayingMovies';
@@ -6,6 +7,7 @@ import useTrendingMovies from '../hooks/useTrendingMovies';
 import Header from './Header';
 import MainContainer from './MainContainer';
 import SecondaryContainer from './SecondaryContainer';
+import GptSearch from './GptSearch';
 
 const Browse = () => {
 
@@ -14,11 +16,21 @@ const Browse = () => {
   useTrendingMovies();
   useActionThriller();
   useHorrorMovies();
+
+  const showGptSearch = useSelector(store => store.gpt.showGptSearch);
+
   return (
     <div>
       <Header variant='browse'/>
-      <MainContainer />
-      <SecondaryContainer />
+
+      {
+        showGptSearch? <GptSearch /> : 
+        <>
+          <MainContainer />
+          <SecondaryContainer />
+        </> 
+      }
+      
     </div>
   )
 }

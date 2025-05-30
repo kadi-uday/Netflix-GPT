@@ -87,11 +87,11 @@ const Login = () => {
         <form onSubmit={(e) => e.preventDefault()} className='w-3/12 absolute p-12 bg-black bg-opacity-70 mx-auto right-0 left-0 text-white rounded-lg z-20 top-28 '>
             <h1 className='text-3xl font-bold py-4'>{isSignInForm?"Sign In" : "Sign Up"}</h1>
 
-            { !isSignInForm && (<input ref={name} type='text' placeholder='Name' className='  p-4 my-4 w-full bg-[#2a2c2a] rounded-lg'></input>)}
+            { !isSignInForm && (<input ref={name} type='text' placeholder='Name' className=' focus:outline-none focus:ring-2 focus:ring-red-600 p-4 my-4 w-full bg-[#2a2c2a] rounded-lg'></input>)}
 
-            <input ref={email} type='email' placeholder='Email' className='  p-4 my-4 w-full bg-[#2a2c2a] rounded-lg'></input>
+            <input ref={email} type='email' placeholder='Email' className=' focus:outline-none focus:ring-2 focus:ring-red-600 p-4 my-4 w-full bg-[#2a2c2a] rounded-lg'></input>
 
-            <input ref={password} type='password' placeholder='Password' className='p-4 my-4 w-full bg-[#2a2c2a] rounded-lg'></input>
+            <input ref={password} type='password' placeholder='Password' className=' focus:outline-none focus:ring-2 focus:ring-red-600 p-4 my-4 w-full bg-[#2a2c2a] rounded-lg'></input>
             
             <button type='button' onClick={handleButtonClick} className='p-4 my-6 w-full rounded-lg text-xl font-bold bg-[#e50914] transition duration-300 ease-in-out hover:bg-[#aa0d12]'>{isSignInForm?"Sign In" : "Sign Up"}</button>
 
