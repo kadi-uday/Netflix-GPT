@@ -66,16 +66,17 @@ const Header = ({ variant = "default" }) => {
 
       {isBrowse && (
         <div className="flex items-center ">
+          
+          <button onClick={handleGptSearchPage} className='text-white mx-6 text-lg font-bold p-2 mr-6 rounded-lg bg-red-700 hover:bg-red-800 transition-all ' >{showGptSearch?"Home Page": "GPT Search"}</button>
         
           {showGptSearch && (
-            <select className=' w-auto bg-blue-950 text-white text-lg font-bold p-3 rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 cursor-pointer' onChange={handleLanguageChange}>
+            <select className=' w-auto  bg-blue-950 text-white text-lg font-bold p-3 rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 cursor-pointer mr-6' onChange={handleLanguageChange}>
             {SUPPORTED_LANGUAGES.map((lang) => (
               <option className='text-white text-lg font-bold p-4 rounded-lg bg-blue-950 ' key={lang.identifier} value={lang.identifier}> {lang.name}</option>
             ))}
           </select>
           )}
 
-          <button onClick={handleGptSearchPage} className='text-white text-lg font-bold p-2 rounded-lg bg-red-700 hover:bg-red-800 transition-all mx-8' >{showGptSearch?"Home Page": "GPT Search"}</button>
           <img
             src={AVATHAR_URL}
             alt="user"

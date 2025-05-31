@@ -27,7 +27,7 @@ const Login = () => {
   const handleButtonClick = () => {
       if(!isSignInForm) {
          const message = checkValidData(email.current.value, password.current.value, name.current.value);
-         // console.log(message);
+        
         setErrorMessage(message);
         // Sign Up form
         if(message) return;
@@ -48,7 +48,6 @@ const Login = () => {
               // An error occurred
               setErrorMessage(error.message);
             });
-            console.log(user);
           })
         .catch((error) => {
           const errorCode = error.code;
@@ -58,7 +57,6 @@ const Login = () => {
       } 
       else {
         const message = checkValidData(email.current.value, password.current.value);
-      // console.log(message);
       setErrorMessage(message);
         // Sign In form
       if(message) return;
