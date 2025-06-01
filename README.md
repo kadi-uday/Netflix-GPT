@@ -71,25 +71,25 @@ NetflixGPT is a React-based movie browsing and GPT-powered search application in
 
 ### 🔐 Login Page
 
-![Login Page](/1-NetflixGpt-LoginPage.png)
+![Login Page](public/1-NetflixGpt-LoginPage.png)
 
 ---
 
 ### 🏠 Home / Browse Page
 
-![Home Page](/2-NetflixGpt-HomePage.png)
+![Home Page](public/2-NetflixGpt-HomePage.png)
 
 ---
 
 ### 🎬 Movie List Section
 
-![Movie List](/3-NetflixGpt-MovieList.png)
+![Movie List](public/3-NetflixGpt-MovieList.png)
 
 ---
 
 ### 🤖 GPT Search Page
 
-![GPT Search Page](/4-NetflixGpt-GptSearchPage.png)
+![GPT Search Page](public/4-NetflixGpt-GptSearchPage.png)
 
 ---
 
