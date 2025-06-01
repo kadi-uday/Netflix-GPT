@@ -49,17 +49,17 @@ const GptSearchBar = () => {
     };
 
   return (
-    <div>
-    <form onSubmit={(e) => e.preventDefault()} className="absolute top-28 left-1/2 transform -translate-x-1/2 w-10/12 lg:w-7/12 p-6 bg-black bg-opacity-80 text-white rounded-2xl shadow-lg flex items-center space-x-4 z-20">
+    <div className='relative z-10 top-4 md:top-2 lg:top-0'>
+    <form onSubmit={(e) => e.preventDefault()} className="  top-24 mx-auto  w-11/12 sm:w-10/12 md:w-9/12 lg:w-7/12 p-4 sm:top-40 max-[635px]:top-32 lg:top-32 sm:p-5 md:p-6 bg-black bg-opacity-80 text-white rounded-2xl shadow-lg flex flex-col sm:flex-row sm:items-center space-y-3 sm:space-y-0 sm:space-x-4 ">
         <input
         ref={searchText}
         type="text"
         placeholder={lang[langKey].getSearchPlaceholder}
-        className="flex-grow p-4 bg-[#2a2c2a] rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600 text-sm md:text-base"
+        className="w-full sm:flex-grow p-3 sm:p-4 bg-[#2a2c2a] rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600 text-sm md:text-base"
         />
         <button
         onClick={handleGptSearchClick}
-        className="px-5 py-3 bg-red-600 hover:bg-red-700 transition-colors rounded-lg text-white font-bold md:text-xl shadow-md"
+        className="w-full  sm:w-auto px-4 py-3 sm:px-5 sm:py-3 bg-red-600 hover:bg-red-700 transition-colors rounded-lg text-white font-bold text-base md:text-xl shadow-md"
         >
         {lang[langKey].search}
         </button>

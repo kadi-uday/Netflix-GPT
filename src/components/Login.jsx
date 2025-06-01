@@ -76,24 +76,25 @@ const Login = () => {
   };
 
   return (
-    <div className='relative'>
+    <div className='relative min-h-screen'>
         <Header />
-        <div className='absolute inset-0 -z-10' >
-            <img src={BG_IMG_URL} alt='background-img' className='brightness-75 '></img>
+        <div className=' absolute inset-0 -z-10' >
+            <img src={BG_IMG_URL} alt='background-img' className='w-full h-full z-10 object-cover brightness-75 '></img>
         </div>
 
-        <form onSubmit={(e) => e.preventDefault()} className='w-3/12 absolute p-12 bg-black bg-opacity-70 mx-auto right-0 left-0 text-white rounded-lg z-20 top-28 '>
-            <h1 className='text-3xl font-bold py-4'>{isSignInForm?"Sign In" : "Sign Up"}</h1>
+        <form onSubmit={(e) => e.preventDefault()} className=' absolute top-52  md:top-28 w-11/12 sm:w-9/12 md:w-6/12 lg:w-4/12 xl:w-3/12 
+               p-6 sm:p-8 md:p-10 lg:p-12 bg-black bg-opacity-70 text-white rounded-lg z-20 mx-auto left-0 right-0 '>
+            <h1 className='text-xl md:text-2xl lg:text-3xl font-bold py-2 md:py-3 lg:py-4'>{isSignInForm?"Sign In" : "Sign Up"}</h1>
 
-            { !isSignInForm && (<input ref={name} type='text' placeholder='Name' className=' focus:outline-none focus:ring-2 focus:ring-red-600 p-4 my-4 w-full bg-[#2a2c2a] rounded-lg'></input>)}
+            { !isSignInForm && (<input ref={name} type='text' placeholder='Name' className=' focus:outline-none focus:ring-2 focus:ring-red-600 p-2 my-3 md:p-3 md:my-3 lg:p-4 lg:my-4 w-full bg-[#2a2c2a] rounded-lg'></input>)}
 
-            <input ref={email} type='email' placeholder='Email' className=' focus:outline-none focus:ring-2 focus:ring-red-600 p-4 my-4 w-full bg-[#2a2c2a] rounded-lg'></input>
+            <input ref={email} type='email' placeholder='Email' className=' focus:outline-none focus:ring-2 focus:ring-red-600 p-2 my-3 md:p-3 md:my-3 lg:p-4 lg:my-4 w-full bg-[#2a2c2a] rounded-lg'></input>
 
-            <input ref={password} type='password' placeholder='Password' className=' focus:outline-none focus:ring-2 focus:ring-red-600 p-4 my-4 w-full bg-[#2a2c2a] rounded-lg'></input>
+            <input ref={password} type='password' placeholder='Password' className=' focus:outline-none focus:ring-2 focus:ring-red-600 p-2 my-3 md:p-3 md:my-3 lg:p-4 lg:my-4 w-full bg-[#2a2c2a] rounded-lg'></input>
             
-            <button type='button' onClick={handleButtonClick} className='p-4 my-6 w-full rounded-lg text-xl font-bold bg-[#e50914] transition duration-300 ease-in-out hover:bg-[#aa0d12]'>{isSignInForm?"Sign In" : "Sign Up"}</button>
+            <button type='button' onClick={handleButtonClick} className='p-2 my-3 md:p-3 md:my-5 lg:p-4 lg:my-6 w-full rounded-lg text-sm md:text-lg lg:text-xl font-bold bg-[#e50914] transition duration-300 ease-in-out hover:bg-[#aa0d12]'>{isSignInForm?"Sign In" : "Sign Up"}</button>
 
-            {errorMessage && (<p className='text-lg font-bold text-red-600 mb-4'>{errorMessage}</p>)}
+            {errorMessage && (<p className='text-[10px] md:text-sm lg:text-lg font-bold text-red-600 mb-2 md:mb-3 lg:mb-4'>{errorMessage}</p>)}
 
             <p className='text-white/70'>{isSignInForm?"New to Netflix?" :"Already registered?"} <button type='button' onClick={toggleSignInForm} className='text-white'>{isSignInForm? "Sign Up now" : "Sign In now"}</button></p>
         </form>
